@@ -36,6 +36,7 @@ export default function ProjectCard({ project, index, priority = false }) {
           <div>
             <p className="flex items-center gap-3 font-mono text-[12px] text-muted">
               {String(index + 1).padStart(2, "0")}
+              {project.builtAt && <span>Built at {project.builtAt}</span>}
               {gallery.length > 1 && (
                 <span className="inline-flex items-center gap-1">
                   <Images size={12} strokeWidth={1.8} aria-hidden="true" />

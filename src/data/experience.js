@@ -29,4 +29,21 @@ export const experience = [
     ],
     stack: ["Laravel", "PHP", "MySQL", "JavaScript", "React.js", "Next.js", "AWS"],
   },
+  {
+    title: "Full Stack Developer", // TODO: confirm job title
+    company: "LetsEngage",
+    companyUrl: "https://www.letsengage.com/",
+    location: "",
+    start: "", // TODO: add start date, e.g. "Jan 2023"
+    end: "", // TODO: add end date
+    verified: false,
+    responsibilities: [
+      "Maintained and debugged the live LetsEngage talent booking platform across releases, including Engage 3.0.",
+      "Built large-scale talent filtering by category, subcategory, budget and location across 5,000+ profiles.",
+      "Implemented radius-based location search so only talent within the selected miles appears.",
+      "Added new payment methods and updated the payment flow.",
+      "Developed and updated modules for the Engage 3.0 admin dashboard.",
+    ],
+    stack: ["Laravel", "PHP", "MySQL", "JavaScript"], // TODO: confirm
+  },
 ];

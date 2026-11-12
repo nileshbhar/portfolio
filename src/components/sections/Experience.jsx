@@ -18,11 +18,13 @@ export default function Experience() {
               className="relative grid gap-6 border-b border-line py-10 md:grid-cols-12 md:gap-10 md:py-14"
             >
               <div className="md:col-span-3">
-                <p className="font-mono text-[13px] text-ink">
-                  <time>{job.start}</time>
-                  <span className="text-muted"> — </span>
-                  <time>{job.end}</time>
-                </p>
+                {(job.start || job.end) && (
+                  <p className="font-mono text-[13px] text-ink">
+                    <time>{job.start}</time>
+                    {job.start && job.end && <span className="text-muted"> — </span>}
+                    <time>{job.end}</time>
+                  </p>
+                )}
                 {job.location && <p className="mt-2 text-[14px] text-body">{job.location}</p>}
               </div>
 

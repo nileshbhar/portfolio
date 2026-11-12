@@ -107,6 +107,7 @@ export default async function ProjectPage({ params }) {
   ].filter(Boolean);
 
   const meta = [
+    { label: "Company", value: project.builtAt, href: project.builtAtUrl },
     { label: "Role", value: project.role },
     { label: "Year", value: project.year },
     { label: "Status", value: project.status || "" },
@@ -139,7 +140,18 @@ export default async function ProjectPage({ params }) {
           {meta.map((m) => (
             <div key={m.label} className="sm:col-span-3">
               <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted">{m.label}</p>
-              <p className="mt-2 text-[15px] text-ink">{m.value}</p>
+              {m.href ? (
+                <a
+                  href={m.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 inline-block text-[15px] text-ink underline decoration-line underline-offset-4 hover:decoration-ink"
+                >
+                  {m.value}
+                </a>
+              ) : (
+                <p className="mt-2 text-[15px] text-ink">{m.value}</p>
+              )}
             </div>
           ))}
           <div className="sm:col-span-6 sm:col-start-7">
@@ -229,9 +241,10 @@ export default async function ProjectPage({ params }) {
               <ScreenshotGallery images={gallery} title={project.title} />
             ) : (
               <p className="text-[16px] text-body">
-                {project.status === "In Development"
-                  ? "Screenshots will be added as development progresses."
-                  : "Screenshots will be added soon."}
+                {project.screenshotsNote ||
+                  (project.status === "In Development"
+                    ? "Screenshots will be added as development progresses."
+                    : "Screenshots will be added soon.")}
               </p>
             )}
           </div>

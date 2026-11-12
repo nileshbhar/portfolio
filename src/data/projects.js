@@ -259,6 +259,72 @@ export const projects = [
     outcomes: [],
   },
   {
+    // Built at a previous employer. Describe only your own work, keep out
+    // anything confidential, and add only screenshots that are public or
+    // that LetsEngage has approved.
+    // REVIEW: confirm `tech`, `role` and `period` before publishing.
+    slug: "letsengage-talent-booking-platform",
+    title: "LetsEngage Talent Booking Platform",
+    status: "",
+    year: "",
+    builtAt: "LetsEngage",
+    builtAtUrl: "https://www.letsengage.com/",
+    role: "Full Stack Developer · maintenance and new modules",
+    description:
+      "A live talent booking platform that connects event organisers with speakers, athletes, entertainers and influencers. I maintained the production platform and built new modules, including large-scale talent filtering, radius-based location search, new payment methods and the Engage 3.0 admin dashboard.",
+    tech: ["Laravel", "PHP", "MySQL", "JavaScript"],
+    cover: "/images/projects/letsengage-cover.svg",
+    links: { live: "https://www.letsengage.com/", repo: "" },
+    overview:
+      "LetsEngage (Engage) is a live talent booking platform. Event organisers use it to find and book speakers, athletes, entertainers, authors and influencers for in-person and virtual events. I joined after launch and worked on later versions of the product, including Engage 3.0, covering ongoing maintenance and the development of new modules across search, payments and administration.",
+    problem:
+      "The platform lists more than 5,000 talent profiles across different countries, states and cities, organised into categories and subcategories. Organisers need to narrow that roster precisely by category, subcategory, budget and location, in any combination, and get only the talent that genuinely matches. The business also needed to support more payment methods and give administrators better tools to manage the platform.",
+    solution:
+      "I built a filtering system that combines category, subcategory, budget and location filters and returns accurate results for every combination. Location search works by radius in miles, so only talent within the chosen distance of a location appears. Alongside this I extended the payment module with new payment methods, built and updated parts of the Engage 3.0 admin dashboard, and kept the live platform stable through ongoing maintenance.",
+    responsibilities: [
+      "Maintained and debugged the live production platform across releases.",
+      "Built large-scale talent filtering by category, subcategory, budget and location.",
+      "Implemented radius-based location search measured in miles.",
+      "Added new payment methods and updated the existing payment flow.",
+      "Developed and updated modules for the Engage 3.0 admin dashboard.",
+      "Added new modules and updated existing ones as the product evolved.",
+    ],
+    features: [
+      "Category and subcategory filtering",
+      "Budget range filtering",
+      "Country, state and city filtering",
+      "Radius search in miles",
+      "Combined multi-filter search",
+      "New payment methods",
+      "Payment flow updates",
+      "Engage 3.0 admin dashboard",
+      "Ongoing maintenance and fixes",
+    ],
+    challenges: [
+      {
+        title: "Accurate results across every filter combination",
+        text: "With more than 5,000 talent profiles and filters for category, subcategory, budget and location that can be combined freely, every combination had to return exactly the right set of talent, with nothing missing and nothing extra.",
+      },
+      {
+        title: "Precise radius search",
+        text: "Location search needed real distance: only talent within the selected radius in miles should appear, across countries, states and cities.",
+      },
+      {
+        title: "Changing a live payment system",
+        text: "New payment methods were added to a platform already taking real bookings, so changes had to fit the existing flow without disrupting it.",
+      },
+      {
+        title: "Working in an established codebase",
+        text: "Joining a live product meant learning existing conventions and data structures, then extending them safely across versions.",
+      },
+    ],
+    architecture: [],
+    screenshotsNote:
+      "This platform belongs to LetsEngage, so internal screens aren't shown here. The live product is linked above.",
+    screenshots: [],
+    outcomes: [],
+  },
+  {
     slug: "ai-powered-legal-research-platform",
     title: "AI-Powered Legal Research Platform",
     status: "In Development",

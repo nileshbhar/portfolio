@@ -14,7 +14,7 @@ export const personal = {
   location: "", // e.g. "India · Open to remote"
 
   // TODO: replace with your real contact email.
-  email: "hello@nilesh.dev",
+  email: "nileshbhardwaj02@gmail.com",
 
   // Resume: drop your PDF at /public/resume.pdf and set available to true.
   // While false, "Download CV" buttons show as "CV available on request"

@@ -60,10 +60,22 @@ Remove client names and personal data from captures before adding them.
 
 ## Contact form
 
-The form posts to `/api/contact`, which sends through [Resend](https://resend.com) with a plain `fetch`.
+Submissions are emailed to you and never stored. Sending goes through Gmail SMTP (`nodemailer`), and replying to the email replies to the visitor.
 
-- Configured: set `RESEND_API_KEY`, `CONTACT_TO_EMAIL` and optionally `CONTACT_FROM_EMAIL` (see `.env.example`).
-- Not configured: the API returns `configured: false` and the form tells the visitor it wasn't sent, then offers a pre-filled email link. It never pretends to send.
+Setup:
+1. On the Gmail account that will send the emails, turn on 2-Step Verification.
+2. Create an App Password at https://myaccount.google.com/apppasswords.
+3. Create `.env.local` in the project root:
+
+   ```
+   SMTP_USER=yourgmail@gmail.com
+   SMTP_PASS=your16characterapppassword
+   CONTACT_TO_EMAIL=where-you-want-messages@gmail.com
+   ```
+
+4. Restart `npm run dev`. On Vercel, add the same three variables under Settings → Environment Variables, then redeploy.
+
+Without these variables the form tells visitors it couldn't send and offers a pre-filled email link instead. It never pretends to send.
 
 Spam protection: hidden honeypot field, a minimum time-to-submit check, server-side validation and length limits, and a light per-instance rate limit.
 
