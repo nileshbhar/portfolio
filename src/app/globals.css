@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #111111;
+  --color-body: #737373;
+  --color-muted: #777777;
+  --color-surface: #f8f8f8;
+  --color-line: #eaeaea;
+  --color-button: #171717;
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root {
+  color-scheme: light;
+  --header-height: 68px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #111111;
+  color: #ffffff;
+}
+
+:focus-visible {
+  outline: 2px solid #111111;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Thin animated line used by the hero scroll indicator */
+@keyframes scroll-cue {
+  0% {
+    transform: translateY(-100%);
+  }
+  60%,
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.scroll-cue::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent, #111111 50%, transparent);
+  animation: scroll-cue 2.4s var(--ease-out-soft) infinite;
+}
+
+/* Very subtle dotted texture behind the hero, fading out toward the bottom */
+.hero-texture {
+  background-image: radial-gradient(#e6e6e6 1px, transparent 1px);
+  background-size: 28px 28px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 70% 30%, #000 10%, transparent 75%);
+  mask-image: radial-gradient(ellipse 70% 60% at 70% 30%, #000 10%, transparent 75%);
+}
